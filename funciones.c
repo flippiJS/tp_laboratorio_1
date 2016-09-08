@@ -1,25 +1,24 @@
-//Saludo
-
-void saludar(void)
-{
-    system("cls");
-    printf("Hola hola!");
-    return;
-}
+#include <ctype.h>
+#include <stdlib.h>
+#include <stdio.h>
 
 //Ingreso
 
 int operando()
-
-{   int num;
+{
+    int num;
+    char dato[10];
     system("cls");
     printf("\n------------------------------------\n");
     printf("Ingrese un operando \n");
     printf("------------------------------------\n");
-    scanf("%d",&num);
-    printf("\n Numero Guardado! \n");
+	scanf("%s", &dato);
+    fflush(stdin);
     printf("------------------------------------\n");
-    return num;
+    printf("Numero guardado! \n");
+    printf("------------------------------------\n");
+
+    return atoi(&dato[0]);
 }
 
 //Menu
@@ -35,10 +34,10 @@ int menu(numero1,numero2){
     printf("\n 7- Calcular el factorial (A!)");
     printf("\n 8- Calcular todas las operaciones");
     printf("\n 9- Salir");
-    printf("\n---------");
+    printf("\n--------------");
     printf("\n Seleccione una opcion:");
     scanf("%d",&opcion);
-
+    fflush(stdin);
     return opcion;
 }
 
@@ -57,9 +56,9 @@ int resta(numero1,numero2){
     return resul;
 }
 //Division
-int divido(numero1,numero2){
-    int resul;
-    resul = numero1/numero2;
+float divido(numero1,numero2){
+    float resul;
+    resul = (float)numero1 / (float)numero2;
     return resul;
 }
 //Multiplicacion
@@ -70,10 +69,10 @@ int multiplico(numero1,numero2){
 }
 
 //Factorizado
-int factorial(numero1){
+double factorial(numero1){
 
-    int resultado=1;
-    int factorial;
+    double resultado=1;
+    double factorial;
     factorial=numero1;
     while(factorial>1){
     resultado=resultado*factorial;

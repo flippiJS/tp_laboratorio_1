@@ -61,7 +61,7 @@ int resta(int,int);
  * \return El resultado de la operacion
  *
  */
-int divido(int,int);
+float divido(int,int);
 
 
 
@@ -82,7 +82,7 @@ int multiplico(int,int);
  * \return El resultado de la operacion
  *
  */
-int factorial(int);
+double factorial(int);
 
 
 
