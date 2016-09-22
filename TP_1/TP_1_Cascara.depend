@@ -17,12 +17,16 @@
 
 1472086758 d:\clase_04\tp_1_cascara\funciones.h
 
-1472073182 source:c:\users\flippinator\desktop\utn\yo\tp_1_finaldocumentado\funciones.c
+1473375668 source:c:\users\flippinator\desktop\utn\yo\tp_1_finaldocumentado\funciones.c
+	<ctype.h>
+	<stdlib.h>
+	<stdio.h>
 
-1472073182 source:c:\users\flippinator\desktop\utn\yo\tp_1_finaldocumentado\main.c
+1473375869 source:c:\users\flippinator\desktop\utn\yo\tp_1_finaldocumentado\main.c
 	<stdio.h>
 	<stdlib.h>
+	<ctype.h>
 	"funciones.h"
 
-1472073182 c:\users\flippinator\desktop\utn\yo\tp_1_finaldocumentado\funciones.h
+1473375619 c:\users\flippinator\desktop\utn\yo\tp_1_finaldocumentado\funciones.h
 
