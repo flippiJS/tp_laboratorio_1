@@ -45,9 +45,6 @@ int buscarLugarLibre(ABMPersona Persona[], int longitud)
 
 void cargaPersona(ABMPersona Persona[])
 {
-        int edadHasta18=3;
-    int edad19a35=5;
-    int edadMayor35=6;
     int i;
         system("cls");
         int lugar = buscarLugarLibre(Persona,MAXIMO_INGRESO);
@@ -76,18 +73,6 @@ void cargaPersona(ABMPersona Persona[])
         Persona[lugar].Estado = 1;
         system("cls");
         printf("\nGuardado con exito! \n\n");
-
-        //Sumamos Flag de Fecha para Graficar
-
-        if(Persona[lugar].Edad<18){
-            edadHasta18++;
-
-        }else if(Persona[lugar].Edad <= 19 && Persona[lugar].Edad >= 35){
-            edad19a35++;
-
-        }else if(Persona[lugar].Edad > 35){
-            edadMayor35++;
-        }
 }
 
 // Borramos a la persona
@@ -102,11 +87,18 @@ void bajaPersona(ABMPersona Persona[])
 {
     int i;
     int dni;
+    char auxPersonaDNI[128];
     int indice=0;
 
-    system("cls");
-    printf("\n-Ingrese DNI a borrar:");
-    scanf("%d",&dni);
+        system("cls");
+        obtenerCadena("\n-Ingrese DNI a borrar: ",auxPersonaDNI);
+        if(!checkNum(auxPersonaDNI,11))
+        {
+            system("cls");
+
+            printf("Debes ingresar un DNI valido.\n");
+        }
+        dni = atoi(auxPersonaDNI);
 
     for(i=0; i<MAXIMO_INGRESO; i++)
     {
@@ -323,5 +315,59 @@ int onlyChar(char str[])
    return 1;
 }
 
+/**
+ * \brief Comprueba longitud de un  numero
+ * \param numeros es la cadena que se desea comprobar y maximo el maximo
+ * \return Devuelve el valor 1 esta en el rango y 0 si no
+ *
+ */
+int checkNum(char numeros[],int maximo)
+{
+    int flag=1;
+    int cantidad=strlen(numeros);
+    int i=0;
+
+    while(numeros[i] != '\0')
+    {
+        if((cantidad>maximo)||(numeros[i] < '0' || numeros[i] > '9'))
+        {
+            flag= 0;
+        }
+        i++;
+    }
+    return flag;
+}
+/**
+ * \brief Comprueba el rango de un numero ingresado
+ * \param i es el numero a comprobar, desde y hasta son los limites
+ * \return Devuelve el valor 1 y 0
+ *
+ */
+int checkInt(int i,int desde,int hasta)
+{
+    int flag;
+
+    if(i<desde||i>hasta)
+    {
+        flag=0; //Checkeamos limite
+    }
+    else
+    {
+        flag=1;
+    }
+    return flag;
+}
+/**
+ * \brief Obtiene un string
+ * \param Mensaje es el mensaje a mostrar y Input donde se guarda
+ * \return Void
+ *
+ */
+void obtenerCadena (char Mensaje[],char Input[])
+{
+    puts(Mensaje);
+    fflush(stdin);
+    gets(Input);
+}
 
 

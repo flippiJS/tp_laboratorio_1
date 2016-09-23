@@ -14,6 +14,8 @@ int main()
     int edadMayor35 = 0;
     int i;
     char seguir='s';
+    char auxPersona[128];
+    char auxPersonaDNI[128];
     int opcion = 0;
 	ABMPersona Persona[MAXIMO_INGRESO];
 	inicializar(Persona,MAXIMO_INGRESO);
@@ -40,16 +42,25 @@ int main()
             case 1:
                 system("cls");
                 int lugar = buscarLugarLibre(Persona,MAXIMO_INGRESO);
-                printf("\n-Ingrese NOMBRE: ");
+                printf("\n-Ingrese NOMBRE: \n");
                 fflush(stdin);
                 gets(Persona[lugar].Nombre);
                     if(onlyChar(Persona[lugar].Nombre) == 0){
                         printf("Debes ingresar un Nombre correcto\n");
                         break;
                     }
+                //
+                obtenerCadena("\n-Ingrese DNI: ",auxPersonaDNI);
+                if(!checkNum(auxPersonaDNI,11))
+                {
+                    system("cls");
 
-                printf("\n-Ingrese DNI: ");
-                scanf("%d",&Persona[lugar].Dni);
+                    printf("Debes ingresar un DNI valido.\n");
+
+                    break;
+                }
+                Persona[lugar].Dni = atoi(auxPersonaDNI);
+                //
                 for(i=0; i<MAXIMO_INGRESO; i++)
                 {
                     if(Persona[i].Estado == 1 && Persona[i].Dni == Persona[lugar].Dni)
@@ -59,10 +70,28 @@ int main()
                     }
                 }
                 fflush(stdin);
-                printf("\n-Ingrese EDAD: ");
-                scanf("%d",&Persona[lugar].Edad);
+                obtenerCadena("\n-Ingrese EDAD: ",auxPersona);
+                if(!checkNum(auxPersona,4))
+                {
+                    system("cls");
+
+                    printf("Debes ingresar una edad valida.\n");
+
+                    break;
+                }
+                Persona[lugar].Edad = atoi(auxPersona);
+                if(!checkInt(Persona[lugar].Edad,0,99))
+                {
+                    system("cls");
+
+                    printf("Debes ingresar una edad valida\n");
+
+                    break;
+                }//
                 Persona[lugar].Estado = 1;
+
                 system("cls");
+
                 printf("\nGuardado con exito! \n\n");
 
                 //Sumamos Flag de Fecha para Graficar
@@ -79,7 +108,47 @@ int main()
                 end:
                 break;
             case 2:
-                bajaPersona(Persona);
+                    system("cls");
+                    int x = 0;
+                    int dni = 0;
+                    char auxPersonaDNI[128];
+                    int indice=0;
+                    obtenerCadena("\n-Ingrese DNI a borrar: ",auxPersonaDNI);
+                    if(!checkNum(auxPersonaDNI,11))
+                    {
+                        system("cls");
+
+                        printf("Debes ingresar un DNI valido.\n");
+                        break;
+                    }
+                    dni = atoi(auxPersonaDNI);
+
+                for(x=0; x<MAXIMO_INGRESO; x++)
+                {
+                    if(Persona[x].Estado == 1 && Persona[x].Dni == dni)
+                    {
+                        indice=x;
+                        break;
+                    }
+
+                }
+                if(x==MAXIMO_INGRESO)
+                {
+                   printf("\nNo se encuentra el DNI ingresado!\n\n");
+                   break;
+                }
+                printf("\nBorrado con exito!\n\n");
+
+                if(Persona[indice].Edad < 18){
+                    edadHasta18--;
+
+                }else if(Persona[indice].Edad > 18 && Persona[indice].Edad < 35){
+                    edad19a35--;
+
+                }else if(Persona[indice].Edad > 35){
+                    edadMayor35--;
+                }
+                    Persona[indice].Estado = 2;
                 break;
             case 3:
                 mostrarLista(Persona);
