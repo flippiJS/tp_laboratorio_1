@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1474604541 source:c:\users\flippinator\desktop\utn\yo\al git\trabajos practicos\tp_2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<string.h>
+	<ctype.h>
+	"funciones.h"
+
+1474586713 c:\users\flippinator\desktop\utn\yo\al git\trabajos practicos\tp_2\funciones.h
+
+1474603614 source:c:\users\flippinator\desktop\utn\yo\al git\trabajos practicos\tp_2\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<string.h>
+	<ctype.h>
+	"funciones.h"
+
