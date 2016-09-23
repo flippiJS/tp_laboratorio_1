@@ -10,3 +10,6 @@ int buscarLugarLibre(ABMPersona Persona[], int longitud);
 void cargaPersona(ABMPersona Persona[]);
 void bajaPersona(ABMPersona Persona[]);
 void mostrarLista(ABMPersona Persona[]);
+char getChar(char mensaje[]);
+int onlyNum(char str[]);
+int onlyChar(char str[]);

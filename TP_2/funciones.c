@@ -239,40 +239,50 @@ if(hasta18 >= de19a35 && hasta18 >= mayorDe35)
  */
 float getFloat(char mensaje[])
 {
-    float auxiliar;
+    float aux;
+
     printf("%s",mensaje);
-    scanf("%f",&auxiliar);
-    return auxiliar;
+
+    scanf("%f",&aux);
+
+    return aux;
 }
 
 
 /**
  * \brief Solicita un número al usuario y devuelve el resultado
- * \param mensaje Es el mensaje a ser mostrado
- * \return El número ingresado por el usuario
+ * \param  el mensaje a ser mostrado
+ * \return Devuelve el numero ingresado
  *
  */
 int getInt(char mensaje[])
 {
-    int auxiliar;
+    int aux;
+
     printf("%s",mensaje);
-    scanf("%d",&auxiliar);
-    return auxiliar;
+
+    scanf("%d",&aux);
+
+    return aux;
 }
 
 
 /**
  * \brief Solicita un caracter al usuario y devuelve el resultado
  * \param mensaje Es el mensaje a ser mostrado
- * \return El caracter ingresado por el usuario
+ * \return Devuelve el caracter ingresado
  *
  */
 char getChar(char mensaje[])
 {
     char auxiliar;
+
     printf("%s",mensaje);
+
     fflush(stdin);
+
     scanf("%c",&auxiliar);
+
     return auxiliar;
 }
 
