@@ -1,0 +1,38 @@
+# depslib dependency file v1.0
+1477006556 source:c:\users\flippinator\desktop\tp_3_cascara\funciones.c
+	"defines.h"
+	"funciones.h"
+
+1477004446 c:\users\flippinator\desktop\tp_3_cascara\defines.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+
+1476914583 c:\users\flippinator\desktop\tp_3_cascara\funciones.h
+
+1477006343 source:c:\users\flippinator\desktop\tp_3_cascara\main.c
+	<stdio.h>
+	<stdlib.h>
+	"funciones.h"
+	"defines.h"
+
+1477065182 source:c:\users\flippinator\desktop\utn\yo\al git\trabajos practicos\tp_3\funciones.c
+	"defines.h"
+	"funciones.h"
+
+1477004446 c:\users\flippinator\desktop\utn\yo\al git\trabajos practicos\tp_3\defines.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+
+1477064877 c:\users\flippinator\desktop\utn\yo\al git\trabajos practicos\tp_3\funciones.h
+	"defines.h"
+
+1477063907 source:c:\users\flippinator\desktop\utn\yo\al git\trabajos practicos\tp_3\main.c
+	<stdio.h>
+	<stdlib.h>
+	"funciones.h"
+	"defines.h"
+
